@@ -37,14 +37,14 @@ class SuearUdpMsg_0xffeeffee(StructLE):
         self.data = b''
         
         # Validate
-        if self.magic != self.__class__.MAGIC:
-            raise ValueError(f'Invalid magic bytes for {self.__class__.__name__}: {self.magic:#x}')
+        if self.magic != self.MAGIC:
+            raise ValueError(f'Invalid magic bytes for {self.__name__}: {self.magic:#x}')
         return
     
     
     @property
     def type_name(self):
-        return self.__class__.MESSAGE_TYPE[self.type]
+        return self.MESSAGE_TYPE[self.type]
     
     
     def get_bytes(self):
@@ -88,19 +88,19 @@ class SuearDeviceInfo(StructLE):
 
     @property
     def vendor(self):
-        return self._vendor.decode(self.__class__.ENCODING)
+        return self._vendor.decode(self.ENCODING)
     
     @property
     def product_id(self):
-        return self._product_id.decode(self.__class__.ENCODING)
+        return self._product_id.decode(self.ENCODING)
     
     @property
     def fw_version(self):
-        return self._fw_version.decode(self.__class__.ENCODING)
+        return self._fw_version.decode(self.ENCODING)
     
     @property
     def ssid(self):
-        return self._ssid.decode(self.__class__.ENCODING)
+        return self._ssid.decode(self.ENCODING)
 
 
 
