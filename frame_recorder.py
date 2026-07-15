@@ -72,7 +72,7 @@ class App(tk.Tk):
                 exif_image.offset_time = exif_image.offset_time_original = '+00:00'
 
                 filename = f'{frame_time.strftime("%Y%m%d-%H%M%S%f")}.{frame_index:03d}.jpg'
-                output_path = pathlib.Path('./captured_frames') / filename
+                output_path = pathlib.Path('./recorded_frames') / filename
                 output_path.parent.mkdir(parents=True, exist_ok=True)
 
                 with open(output_path, 'wb') as image_file:
