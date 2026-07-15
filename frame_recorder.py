@@ -10,14 +10,16 @@ import numpy as np
 import cv2
 import PIL
 import PIL.ImageTk
+import exif
 
 import suear_camera
 
 
 class App(tk.Tk):
-    def __init__(self, frame_queue, *args, **kwargs):
+    def __init__(self, client, frame_queue, *args, **kwargs):
         super().__init__(*args, **kwargs)
 
+        self.client = client
         self.frame_queue = frame_queue
 
         self.title('ANESOK 401 frame recorder')
@@ -60,10 +62,21 @@ class App(tk.Tk):
             new_images.append((frame_index, frame_time, image))
 
             if self.record:
+                exif_image = exif.Image(frame_data.tobytes())
+
+                exif_image.make = self.client.vendor
+                exif_image.model = self.client.model
+
+                exif_image.datetime = exif_image.datetime_original = frame_time.strftime(exif.DATETIME_STR_FORMAT)
+                exif_image.subsec_time = exif_image.subsec_time_original = frame_time.strftime('%f')
+                exif_image.offset_time = exif_image.offset_time_original = '+00:00'
+
                 filename = f'{frame_time.strftime("%Y%m%d-%H%M%S%f")}.{frame_index:03d}.jpg'
                 output_path = pathlib.Path('./captured_frames') / filename
                 output_path.parent.mkdir(parents=True, exist_ok=True)
-                frame_data.tofile(output_path)
+
+                with open(output_path, 'wb') as image_file:
+                    image_file.write(exif_image.get_file())
 
         if len(new_images) > 0:
             frame_index, frame_time, image = new_images[-1]
@@ -112,7 +125,7 @@ if __name__ == '__main__':
     video_loop_thread = threading.Thread(target=video_loop, args=(client, frame_queue, stop_event), daemon=True)
     video_loop_thread.start()
 
-    window = App(frame_queue)
+    window = App(client, frame_queue)
 
     try:
         response = client.open_video()
