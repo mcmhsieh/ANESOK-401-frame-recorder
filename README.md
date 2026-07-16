@@ -1,19 +1,13 @@
 # View and record Dental Camera video stream frames as a sequence of JPEG images
 
-<figure align="center">
-  <img src="image/screenshot.jpg" alt="Screenshot of GUI" width="640px"/>
-  <figcaption>Screenshot of GUI</figcaption>
-</figure>
+Screenshot of GUI  
+<img src="image/screenshot.jpg" alt="Screenshot of GUI" width="640px"/>
 
-<figure align="center">
-  <img src="image/dental_camera.jpg" alt="Dental Camera" width="640px"/>
-  <figcaption>Dental Camera</figcaption>
-</figure>
+Dental Camera  
+<img src="image/dental_camera.jpg" alt="Dental Camera" width="640px"/>
 
-<figure align="center">
-  <img src="image/example.webp" alt="Example sequence of recorded frame images" width="640px"/>
-  <figcaption>Example sequence of recorded frame images</figcaption>
-</figure>
+Example sequence of recorded frame images  
+<img src="image/example.webp" alt="Example sequence of recorded frame images" width="640px"/>
 
 Author: [Mark Hsieh](https://github.com/mcmhsieh)
 
@@ -24,14 +18,14 @@ Author: [Mark Hsieh](https://github.com/mcmhsieh)
 
 The recorded frame are saved to a directory as individual JPEG images files, which makes them readily viewable and selectable as input for my research project, currently under development, to generate systhesised views by stitching together the collection of frame images.
 
-<figure align="center">
-  <img src="image/synthesised_view.jpg" alt="Example synthesised view generated from a longer sequence of frames" width="640px"/>
-  <figcaption>Example synthesised view generated from a longer sequence of frames</figcaption>
-</figure>
+Example synthesised view generated from a longer sequence of frames  
+<img src="image/synthesised_view.jpg" alt="Example synthesised view generated from a longer sequence of frames" width="640px"/>
 
 ## About the dental camera
 
 Bought from an online marketplace with very little information about its manufacturer or model on the item's listing, packaging, instructions or the device itself.
+
+<img src="image/dental_camera.jpg" alt="Dental Camera" width="640px"/>
 
 The instructions call it "Model: 401", and directs the user to use an app called "ANESOK" on Google Play or Apple App store.
 
@@ -39,14 +33,9 @@ Its Wifi SSID is "ANESOK-401-*xxxx*", and the vendor/model/version information i
 
 Searching online, it appears to be the [SUNUO® 401 Wifi Dental Camera Oral Endoscope](http://anesoksunuo.com/dental-camera/199.html) made by Shenzhen Sulang Technology Co., Ltd, "ANESOK" and "INSKAM" seem to be alternative names associated with "SUNUO".
 
-<figure align="center">
-  <img src="image/dental_camera.jpg" alt="Dental Camera" width="640px"/>
-  <figcaption>Dental Camera</figcaption>
-</figure>
-
 There is further information about the family devices in the [README of Sean Pesce's MJPEG Mirror for Suear "Smart" Ear Cleaners](https://github.com/SeanPesce/Suear-Web-Viewer/blob/main/README.md).
 
-## Usage (Microsoft Window)
+## Usage (Microsoft Windows)
 
 - Clone or download repo
 - Install Python 3.11 and Python Poetry
