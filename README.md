@@ -1,90 +1,65 @@
-# MJPEG Mirror for Suear "Smart" Ear Cleaners  
-**Author: Sean Pesce**  
+# View and record Dental Camera video stream frames as a sequence of JPEG images
 
-<p align="center">
-<img align="center" title="Example clip from MJPEG stream" src="https://github.com/SeanPesce/Suear-Web-Viewer/blob/main/image/example.webp?raw=true" alt="Example clip from MJPEG stream" width="320px">
-</p>  
+<figure align="center">
+  <img src="image/screenshot.jpg" alt="Screenshot of GUI" width="640px"/>
+  <figcaption>Screenshot of GUI</figcaption>
+</figure>
 
+<figure align="center">
+  <img src="image/dental_camera.jpg" alt="Dental Camera" width="640px"/>
+  <figcaption>Dental Camera</figcaption>
+</figure>
 
-## Overview  
-A utility for converting [Suear "smart" earwax cleaner](https://play.google.com/store/apps/details?id=com.i4season.bkCamera) video streams to MJPEG for general-purpose use.  
+<figure align="center">
+  <img src="image/example.webp" alt="Example sequence of recorded frame images" width="640px"/>
+  <figcaption>Example sequence of recorded frame images</figcaption>
+</figure>
 
-**NOTE:** This tool has only been tested with the [LEIPUT X6](https://www.amazon.com/Ear-Wax-Removal-Remover-Android%EF%BC%88Black%EF%BC%89/dp/B09KZ8TS7L), but it should work for any product that uses `libWifiCamera.so` and/or the Suear mobile app (`com.i4season.bkCamera` - [Google Play](https://play.google.com/store/apps/details?id=com.i4season.bkCamera)/[iOS](https://apps.apple.com/us/app/suear/id1567383367)/[Direct APK download](https://web.archive.org/web/20230117012623/http://120.79.9.129/ypc/apk/Suear_V1.1.086.apk)) for video streaming in its client implementation. Relevant brands likely include:  
+Author: [Mark Hsieh](https://github.com/mcmhsieh)
 
- * [AIDELF](https://www.amazon.com/Wireless-Endoscope-Otoscope-Waterproof-Compatible/dp/B09NLVNXQ8)
- * [BEBIRD](https://www.amazon.com/BEBIRD%C2%AE-Removal-Otoscope-Silicone-Compatible/dp/B08M9G18H3)
- * [Carenart](https://www.amazon.com/Removal-Wireless-Cleaning-Compatible-Android/dp/B09FLM4TD7)
- * [COSLUS](https://www.amazon.com/Ear-Wax-Removal-Tool-Camera/dp/B0BGP843CH)
- * [DEETOK](https://www.amazon.com/Removal-Cleaner-Camera-Otoscope-Android/dp/B0BKTMKZKJ)
- * [DJROLL](https://www.amazon.com/DJROLL-Removal-Endoscope-Wireless-Otoscope/dp/B09BC71914)
- * [Fyobyye](https://www.amazon.com/Removal-Cleaner-Camera-Otoscope-Android/dp/B0BLXM7QPT)
- * [Girug](https://www.amazon.com/Removal-Otoscope-Camera-Cleaner-Android/dp/B0BHT3KPMQ)
- * [Hasako](https://www.amazon.com/Removal-Cleaner-Camera-Candles-Android/dp/B0BKG9SNHJ)
- * [Jaydear](https://www.amazon.com/Removal-Earwax-Remover-Cleaner-Otoscope/dp/B0BBZKCZM3)
- * [Kolrry](https://www.amazon.com/Removal-Cleaner-Cleaning-Remover-Smartphones/dp/B0BDRZXH1X)
- * [LEIPUT](https://www.amazon.com/Ear-Wax-Removal-Remover-Android%EF%BC%88Black%EF%BC%89/dp/B09KZ8TS7L)
- * [Loyker](https://www.amazon.com/Removal-Cleaner-Cleaning-Otoscope-Android/dp/B0B9ZSKC99)
- * [RILIAM](https://www.amazon.com/Removal-Cleaner-Otoscope-Waterproof-Android/dp/B09NRGLGNX)
- * [ROOZADE](https://www.amazon.com/ROOZADE-Roozade-Earpick-Set-Black/dp/B0B63TYY79)
- * [SKFMA](https://www.amazon.com/earwax4ws423-Wireless-Otoscope-Endoscope-new34er4r3/dp/B09VBHG5C8)
- * [WXGTAC](https://www.amazon.com/Removal-Cleaner-Compatible-Android-Accessories/dp/B0BLBT3KP8)
- * [Xlife](https://www.amazon.com/Xlife-Removal-Remover-Blackhead-Cleaner/dp/B09QQ6X99W)
- * [Yaej](https://www.amazon.com/Cleaner-Removal-Cleaning-Otoscope-Android/dp/B09R4T1LZ3)
- * [YEOUEOZ](https://www.amazon.com/Removal-Camera-Cleaning-Compatible-Android/dp/B0B8CY2G43)
+## Acknowledgements
+ * Substantially based on [MJPEG Mirror for Suear "Smart" Ear Cleaners](https://github.com/SeanPesce/Suear-Web-Viewer) by [Sean Pesce](https://github.com/SeanPesce)
 
+## Purpose
 
-...and many, many more. Search for "Suear" on [Amazon](https://www.amazon.com/s?k=suear) for more examples.
+The recorded frame are saved to a directory as individual JPEG images files, which makes them readily viewable and selectable as input for my research project, currently under development, to generate systhesised views by stitching together the collection of frame images.
 
+<figure align="center">
+  <img src="image/synthesised_view.jpg" alt="Example synthesised view generated from a longer sequence of frames" width="640px"/>
+  <figcaption>Example synthesised view generated from a longer sequence of frames</figcaption>
+</figure>
 
-## Usage  
+## About the dental camera
 
- * Power on the Suear device  
- * Connect to the Suear WiFi  
- * Start the stream mirror: `python3 suear_mirror.py --no-ssl`  
+Bought from an online marketplace with very little information about its manufacturer or model on the item's listing, packaging, instructions or the device itself.
 
-With the stream mirror running, you can view the live video in a number of ways:  
+The instructions call it "Model: 401", and directs the user to use an app called "ANESOK" on Google Play or Apple App store.
 
- * In a web browser; navigate to `http://127.0.0.1:45100`  
- * In VLC (GUI); go to *Media*→*Open Network Stream...*, set the URL to `http://127.0.0.1:45100/stream`, and then click *Play*  
- * In VLC (command-line); run `vlc http://127.0.0.1:45100/stream`  
- * With ffmpeg; run `ffplay -i http://127.0.0.1:45100/stream`  
+Its Wifi SSID is "ANESOK-401-*xxxx*", and the vendor/model/version information it returns once connected is "YPC/TX806-XRH-401/V24".
 
+Searching online, it appears to be the [SUNUO® 401 Wifi Dental Camera Oral Endoscope](http://anesoksunuo.com/dental-camera/199.html) made by Shenzhen Sulang Technology Co., Ltd, "ANESOK" and "INSKAM" seem to be alternative names associated with "SUNUO".
 
-## SSL/TLS    
+<figure align="center">
+  <img src="image/dental_camera.jpg" alt="Dental Camera" width="640px"/>
+  <figcaption>Dental Camera</figcaption>
+</figure>
 
-The video stream can also be transported over TLS for security. This document won't walk you through setting up your own [PKI](https://myhomelab.gr/linux/2019/12/13/local-ca-setup.html), but the following command will generate a key pair for encrypting traffic with TLS:  
+There is further information about the family devices in the [README of Sean Pesce's MJPEG Mirror for Suear "Smart" Ear Cleaners](https://github.com/SeanPesce/Suear-Web-Viewer/blob/main/README.md).
 
-```
-openssl req -new -newkey rsa:4096 -x509 -sha256 -days 365 -nodes -out cert.crt -keyout private.key
-```
+## Usage (Microsoft Window)
 
-To start the stream mirror over HTTPS, specify the TLS key pair in the shell command:  
+- Clone or download repo
+- Install Python 3.11 and Python Poetry
+- Create a virtual environment and use Poetry to install the dependencies
+- Remove the stick-on clear plastic film covering the LEDs and camera lens on the Dental Camera device. This will improve the clarity of the captured images.
+- Power on the Dental Camera device and set the LED brightness to the dimmest setting
+- Connect to the Dental Camera device's WiFi ("ANESOK-401-*xxxx*")
+  - Optionally set the WiFi connection as a private connection
+  - Optionally manually add a Windows Firewall inbound rule for python.exe (or add it at the automatic prompt when the frame recorder utility is run for the first time)
+  - Optionally add an IPv4 route for 192.168.1.1 to the WiFi interface (in an elevated command prompt) if the system is connected to another router (e.g. via Ethernet) that is also at 192.168.1.1
+- Run the frame recorder utility `python.exe frame_recorder.py`
+- Click the "Start recording" button (or hit space bar key) to start and stop recording images to the `./recorded_frames` subdirectory
 
-```
-python3 suear_mirror.py cert.crt private.key
-```
+## License
 
-The HTTPS stream will then be accessible at `https://127.0.0.1:45100/stream`.  
-
-
-## Contact  
-If you find any bugs, please open a new [GitHub issue](https://github.com/SeanPesce/Suear-Web-Viewer/issues/new).  
-
-
-## Related Projects  
- * **[Spade Web Viewer](https://github.com/SeanPesce/Spade-Web-Viewer)**, a similar project for the [Axel Glade Spade](https://www.axelglade.com/collections/e) brand of "smart" earwax cleaners.  
-
-
-## Acknowledgements  
- * **[Damien Corpataux](https://github.com/damiencorpataux)**, whose [MJPEG implementation](https://github.com/damiencorpataux/pymjpeg) was used as a reference for this project.   
-
-
-## License  
-
-[GNU General Public License v2.0](LICENSE)  
-
-
----------------------------------------------
-
-For unrelated inquiries and/or information about me, visit my **[personal website](https://SeanPesce.github.io)**.  
-
+[GNU General Public License v2.0](LICENSE)
