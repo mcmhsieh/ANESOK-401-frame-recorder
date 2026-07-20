@@ -16,12 +16,12 @@ Author: [Mark Hsieh](https://github.com/mcmhsieh)
 
 ## Purpose
 
-The recorded frame are saved to a directory as individual JPEG images files, which makes them readily viewable and selectable as input for my research project, currently under development, to generate systhesised views by stitching together the collection of frame images.
+The recorded frames are saved to a directory as individual JPEG images files, which makes them readily viewable and selectable as input for my research project: https://github.com/mcmhsieh/Smile (currently under development), to generate systhesised views by stitching together the collection of frame images.
 
 Example synthesised view generated from a longer sequence of frames  
 <img src="image/synthesised_view.jpg" alt="Example synthesised view generated from a longer sequence of frames" width="640px"/>
 
-## About the dental camera
+## About the Dental Camera
 
 Bought from an online marketplace with very little information about its manufacturer or model on the item's listing, packaging, instructions or the device itself.
 
@@ -37,7 +37,7 @@ There is further information about the family devices in the [README of Sean Pes
 
 ## Usage (Microsoft Windows)
 
-- Clone or download repo
+- Clone or download repository
 - Install Python 3.11 and Python Poetry
 - Create a virtual environment and use Poetry to install the dependencies
 - Remove the stick-on clear plastic film covering the LEDs and camera lens on the Dental Camera device. This will improve the clarity of the captured images.
