@@ -23,8 +23,7 @@ Example synthesised view generated from a longer sequence of frames
 
 ## About the Dental Camera
 
-Bought from an online marketplace with very little information about its manufacturer or model on the item's listing, packaging, instructions or the device itself.
-
+Bought from an online marketplace with very little information about its manufacturer or model on the item's listing, packaging, instructions or the device itself.  
 <img src="image/dental_camera.jpg" alt="Dental Camera" width="640px"/>
 
 The instructions call it "Model: 401", and directs the user to use an app called "ANESOK" on Google Play or Apple App store.
@@ -33,20 +32,22 @@ Its Wifi SSID is "ANESOK-401-*xxxx*", and the vendor/model/version information i
 
 Searching online, it appears to be the [SUNUO® 401 Wifi Dental Camera Oral Endoscope](http://anesoksunuo.com/dental-camera/199.html) made by Shenzhen Sulang Technology Co., Ltd, "ANESOK" and "INSKAM" seem to be alternative names associated with "SUNUO".
 
-There is further information about the family devices in the [README of Sean Pesce's MJPEG Mirror for Suear "Smart" Ear Cleaners](https://github.com/SeanPesce/Suear-Web-Viewer/blob/main/README.md).
+There is further information about the family of these devices in the [README of Sean Pesce's MJPEG Mirror for Suear "Smart" Ear Cleaners](https://github.com/SeanPesce/Suear-Web-Viewer/blob/main/README.md).
+
+The clarity of the captured images can be improved by removing the stick-on clear plastic film covering the LEDs and camera lens on the Dental Camera device, although the the instructions accompanying the device do not appear mention the presence of the film.  
+<img src="image/plastic_film.jpg" alt="Plastic film covering the lens and LEDs" width="320px"/>
 
 ## Usage (Microsoft Windows)
 
-- Clone or download repository
+- Clone https://github.com/mcmhsieh/ANESOK-401-frame-recorder.git or download a copy of the repository
 - Install Python 3.11 and Python Poetry
-- Create a virtual environment and use Poetry to install the dependencies
-- Remove the stick-on clear plastic film covering the LEDs and camera lens on the Dental Camera device. This will improve the clarity of the captured images.
+- Create a virtual environment, activate it, and use Poetry to install the dependencies
 - Power on the Dental Camera device and set the LED brightness to the dimmest setting
 - Connect to the Dental Camera device's WiFi ("ANESOK-401-*xxxx*")
   - Optionally set the WiFi connection as a private connection
   - Optionally manually add a Windows Firewall inbound rule for python.exe (or add it at the automatic prompt when the frame recorder utility is run for the first time)
   - Optionally add an IPv4 route for 192.168.1.1 to the WiFi interface (in an elevated command prompt) if the system is connected to another router (e.g. via Ethernet) that is also at 192.168.1.1
-- Run the frame recorder utility `python.exe frame_recorder.py`
+- Run the frame recorder utility in the activated virtual environment `python.exe frame_recorder.py`
 - Click the "Start recording" button (or hit space bar key) to start and stop recording images to the `./recorded_frames` subdirectory
 
 ## License
