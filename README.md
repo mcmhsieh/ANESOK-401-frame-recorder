@@ -40,12 +40,13 @@ The clarity of the captured images can be improved by removing the stick-on clea
 ## Usage (Microsoft Windows)
 
 - Clone https://github.com/mcmhsieh/ANESOK-401-frame-recorder.git or download a copy of the repository
-- Install Python 3.11 and Python Poetry
-- Create a virtual environment, activate it, and use Poetry to install the dependencies
+- Install Python 3.11
+- Create a virtual environment and activate it
+- Install Python Poetry and use it to install the dependencies specified in [poetry.lock](poetry.lock)
 - Power on the Dental Camera device and set the LED brightness to the dimmest setting
 - Connect to the Dental Camera device's WiFi ("ANESOK-401-*xxxx*")
   - Optionally set the WiFi connection as a private connection
-  - Optionally manually add a Windows Firewall inbound rule for python.exe (or add it at the automatic prompt when the frame recorder utility is run for the first time)
+  - Either manually add a system firewall inbound permission rule for python.exe, or add it when e.g. Windows Defender Firewall automatically prompts with a popup dialog during the first-time startup of the frame recorder utility
   - Optionally add an IPv4 route for 192.168.1.1 to the WiFi interface (in an elevated command prompt) if the system is connected to another router (e.g. via Ethernet) that is also at 192.168.1.1
 - Run the frame recorder utility in the activated virtual environment `python.exe frame_recorder.py`
 - Click the "Start recording" button (or hit space bar key) to start and stop recording images to the `./recorded_frames` subdirectory
