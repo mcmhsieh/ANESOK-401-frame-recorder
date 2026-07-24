@@ -1,12 +1,12 @@
 # View and record Dental Camera video stream frames as a sequence of JPEG images
 
-Screenshot of GUI  
+Screenshot of GUI<br>
 <img src="image/screenshot.jpg" alt="Screenshot of GUI" width="640px"/>
 
-Dental Camera  
+Dental Camera<br>
 <img src="image/dental_camera.jpg" alt="Dental Camera" width="640px"/>
 
-Example sequence of recorded frame images  
+Example sequence of recorded frame images<br>
 <img src="image/example.webp" alt="Example sequence of recorded frame images" width="640px"/>
 
 Author: [Mark Hsieh](https://github.com/mcmhsieh)
@@ -18,12 +18,12 @@ Author: [Mark Hsieh](https://github.com/mcmhsieh)
 
 The recorded frames are saved to a directory as individual JPEG images files, which makes them readily viewable and selectable as input for my research project: https://github.com/mcmhsieh/Smile (currently under development), to generate systhesised views by stitching together the collection of frame images.
 
-Example synthesised view generated from a longer sequence of frames  
+Example synthesised view generated from a longer sequence of frames<br>
 <img src="image/synthesised_view.jpg" alt="Example synthesised view generated from a longer sequence of frames" width="640px"/>
 
 ## About the Dental Camera
 
-Bought from an online marketplace with very little information about its manufacturer or model on the item's listing, packaging, instructions or the device itself.  
+Bought from an online marketplace with very little information about its manufacturer or model on the item's listing, packaging, instructions or the device itself.<br>
 <img src="image/dental_camera.jpg" alt="Dental Camera" width="640px"/>
 
 The instructions call it "Model: 401", and directs the user to use an app called "ANESOK" on Google Play or Apple App store.
@@ -34,7 +34,7 @@ Searching online, it appears to be the [SUNUO® 401 Wifi Dental Camera Oral Endo
 
 There is further information about the family of these devices in the [README of Sean Pesce's MJPEG Mirror for Suear "Smart" Ear Cleaners](https://github.com/SeanPesce/Suear-Web-Viewer/blob/main/README.md).
 
-The clarity of the captured images can be improved by removing the stick-on clear plastic film covering the LEDs and camera lens on the Dental Camera device, although the the instructions accompanying the device do not appear mention the presence of the film.  
+The clarity of the captured images can be improved by removing the clear plastic overlay film covering the LEDs and camera lens on the Dental Camera device, although the the instructions accompanying the device do not appear mention the presence of the film.<br>
 <img src="image/plastic_film.jpg" alt="Plastic film covering the lens and LEDs" width="320px"/>
 
 ## Usage (Microsoft Windows)
